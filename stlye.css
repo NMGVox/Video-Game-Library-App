@@ -61,6 +61,7 @@ body {
 .form-container{
     margin-left: 10%;
     min-height: 70%;
+    width: 80%;
     flex: 1 0 initial;
 }
 
@@ -88,7 +89,7 @@ input[type="text"] {
     border: none;
     background-color: rgb(95, 166, 216);
     border-bottom: 2px solid;
-    width: 70%;
+    width: 90%;
     margin-top: .4rem;
     height: 1.3rem;
     font-size: 1.2rem;
@@ -101,18 +102,6 @@ input[type="text"]:focus {
 .radio-header {
     font-size: 1.5rem;
     font-weight: bold;
-}
-
-button[type="submit"] {
-    box-sizing: border-box;
-    height: 3rem;
-    padding: .5rem 1rem;
-    font-size: 1.3rem;
-    font-weight: 800;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 1rem;
-    
 }
 
 input[type="radio"]{
@@ -128,6 +117,21 @@ input[type="radio"]{
 
 input[type="radio"]:checked {
     background-color: orange;
+}
+
+button[type="submit"] {
+    box-sizing: border-box;
+    height: 3rem;
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1rem;
+}
+
+button[type="submit"]:hover{
+    cursor: pointer;
 }
 
 .side-footer {

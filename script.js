@@ -8,6 +8,20 @@ function VideoGame(title, developer, publisher, year_released, play_status) {
     this.play_status = play_status;
 }
 
-function AddVideoGame() {
-    //Form related stuff.
+VideoGame.prototype.printInfo = function(){
+    return(`${this.title} was developed by ${this.developer} and published by ${this.publisher}. You have ${this.play_status} this game.`)
 }
+
+function AddVideoGame(e) {
+    e.preventDefault();
+    if (!addGameForm.checkValidity()) {
+        addGameForm.reportValidity();
+        return false;
+    }
+    const status = document.querySelector('input[name="completion_status"]:checked').value;
+    const game1 = new VideoGame(title.value, dev.value, publisher.value, release_date.value, status);
+    console.log(game1.printInfo());
+    return false;
+}
+
+gameSubmit.addEventListener('click', AddVideoGame);

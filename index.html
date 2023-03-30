@@ -26,7 +26,7 @@
                         <label for="publisher">Publisher</label><input id="publisher" name="publisher" type="text">
                     </li>
                     <li>
-                        <label for="release-date">Release Date:</label><input id="release-date" name="release-date" type="text">
+                        <label for="release-date">Release Date:</label><input id="release_date" name="release-date" type="text">
                     </li>
                     <li><h2 class="radio-header">Completion Status</h2></li>
                     <li>
@@ -36,10 +36,10 @@
                         <label for="started">Started</label><input type="radio"  id="started" name="completion_status"  value="started">
                     </li>
                     <li>
-                        <label for="unplayed">Not Played</label><input type="radio" id="unplayed" name="completion_status" value="unplayed" checked>
+                        <label for="unplayed">Not Played</label><input type="radio" id="unplayed" name="completion_status" value="not played" checked>
                     </li>
                 </ul>
-                <button type="submit">Add Game</button>
+                <button type="submit" id="gameSubmit">Add Game</button>
             </form>
         </div>
         <div class="side-footer">
@@ -54,5 +54,6 @@
             
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
