@@ -46,11 +46,78 @@ body {
     grid-auto-rows: 100%;
 }
 
+/*Sidebar exclusive contents*/
+
 .sidebar {
+    min-height: 100%;
     position:relative;
     z-index: 3;
-    min-height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: rgb(95, 166, 216);
+}
+
+.form-container{
+    margin-left: 10%;
+    min-height: 70%;
+    flex: 1 0 initial;
+}
+
+.form-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#addGameForm li {
+    margin: 1rem 0;
+}
+
+#addGameForm li input:not([type="radio"]) {
+    display:block;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+input[type="text"] {
+    appearance: none;
+    border: none;
+    background-color: rgb(95, 166, 216);
+    border-bottom: 2px solid;
+    width: 70%;
+    margin-top: .4rem;
+    height: 1.3rem;
+    font-size: 1.2rem;
+}
+
+input[type="text"]:focus {
+    outline: none !important;
+}
+
+.radio-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    box-sizing: border-box;
+    height: 3rem;
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1rem;
+    
+}
+
+.side-footer {
+    width: 100%;
+    text-align: center;
 }
 
 .main {
