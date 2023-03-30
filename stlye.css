@@ -115,6 +115,21 @@ button[type="submit"] {
     
 }
 
+input[type="radio"]{
+    appearance: none;
+    height: .8rem;
+    width: .8rem;
+    box-sizing: border-box;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(60, 105, 138);
+    border-width: 2px;
+}
+
+input[type="radio"]:checked {
+    background-color: orange;
+}
+
 .side-footer {
     width: 100%;
     text-align: center;
