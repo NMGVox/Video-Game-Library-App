@@ -9,5 +9,5 @@ function VideoGame(title, developer, publisher, year_released, play_status) {
 }
 
 function AddVideoGame() {
-    //Hm.
+    //Form related stuff.
 }

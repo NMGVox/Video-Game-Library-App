@@ -9,11 +9,49 @@
 </head>
 <body>
     <div class="sidebar">
-        
+        <div class="logo-container">
+            <h1 class="logo">Hello!</h1>
+        </div>
+        <div class="form-container">
+            <form id="addGameForm">
+                <ul>
+                    <li><h1 class="Form Header">Game Information</h1></li>
+                    <li>
+                        <label for="title">Title</label><input id="title" name="title" required type="text">
+                    </li>
+                    <li>
+                        <label for="dev">Developer</label><input id="dev" name="dev" required type="text">
+                    </li>
+                    <li>
+                        <label for="publisher">Publisher</label><input id="publisher" name="publisher" type="text">
+                    </li>
+                    <li>
+                        <label for="release-date">Release Date:</label><input id="release-date" name="release-date" type="text">
+                    </li>
+                    <li><h2 class="radio-header">Completion Status</h2></li>
+                    <li>
+                        <label for="completed">Completed</label><input type="radio" id="completed" name="completion_status"  value="completed">
+                    </li>
+                    <li>
+                        <label for="started">Started</label><input type="radio"  id="started" name="completion_status"  value="started">
+                    </li>
+                    <li>
+                        <label for="unplayed">Not Played</label><input type="radio" id="unplayed" name="completion_status" value="unplayed" checked>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="side-footer">
+            <p>Website desgined by NMGVox</p>
+        </div>
     </div>
     <div class="main">
-        <div class="searchbar"></div>
-        <div class="library"></div>
+        <div class="searchbar">
+
+        </div>
+        <div class="library">
+            
+        </div>
     </div>
 </body>
 </html>
