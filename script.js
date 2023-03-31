@@ -14,12 +14,18 @@ VideoGame.prototype.printInfo = function(){
 
 function AddVideoGame(e) {
     e.preventDefault();
-    if (!addGameForm.checkValidity()) {
-        addGameForm.reportValidity();
+    form = document.querySelector("#addGameForm");
+    if (!form.checkValidity()) {
+        form.reportValidity();
         return false;
     }
-    const status = document.querySelector('input[name="completion_status"]:checked').value;
-    const game1 = new VideoGame(title.value, dev.value, publisher.value, release_date.value, status);
+    const title = document.querySelector("#title");
+    const dev = document.querySelector("#dev");
+    const publisher = document.querySelector("#publisher");
+    const release_date = document.querySelector("#release-date");
+    const status = document.querySelector('input[name="completion_status"]:checked');
+    
+    const game1 = new VideoGame(title.value, dev.value, publisher.value, release_date.value, status.value);
     console.log(game1.printInfo());
     return false;
 }
