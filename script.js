@@ -50,6 +50,8 @@ function updateDisplay(game){
     newdiv.appendChild(cover);
     newdiv.appendChild(infoBox);
 
+    newdiv.setAttribute("index", my_collection.length);
+
     libraryDisplay.appendChild(newdiv);
     return;
 }
