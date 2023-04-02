@@ -169,6 +169,7 @@ button[type="submit"]:hover{
 }
 
 .game-container{
+    position:relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -213,6 +214,22 @@ button[type="submit"]:hover{
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: underline;
+}
+
+.remove-button {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    padding: 2px 2px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 25%;
+    background-color: transparent;
+}
+
+.remove-button:hover {
+    cursor:pointer;
 }
 
   /* Firefox */

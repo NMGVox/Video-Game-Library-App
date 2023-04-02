@@ -31,6 +31,11 @@ function updateDisplay(game) {
     const infoBox = document.createElement('div');
     infoBox.className = 'game-info';
 
+    const rmbtn = document.createElement('button');
+    rmbtn.type = 'button';
+    rmbtn.textContent = '✖';
+    rmbtn.className = 'remove-button';
+
     const infoEle = [];
 
     // Find a way to refactor this portion of code.
@@ -54,12 +59,18 @@ function updateDisplay(game) {
         infoBox.appendChild(infoEle[i]);
     }
 
+    newdiv.appendChild(rmbtn);
     newdiv.appendChild(cover);
     newdiv.appendChild(infoBox);
 
-    newdiv.setAttribute('index', gameCollection.length);
+    newdiv.setAttribute('index', gameCollection.length - 1);
 
     libraryDisplay.appendChild(newdiv);
+}
+
+function removeGame(e) {
+    gameCollection.splice(e.target.parentElement.getAttribute('index'), 1);
+    e.target.parentElement.remove();
 }
 
 function AddVideoGame(e) {
@@ -91,3 +102,9 @@ function AddVideoGame(e) {
 const submitGame = document.querySelector('#gameSubmit');
 
 submitGame.addEventListener('click', AddVideoGame);
+
+document.querySelector('body').addEventListener('click', (event) => {
+    if (event.target.className === 'remove-button') {
+        removeGame(event);
+    }
+});
