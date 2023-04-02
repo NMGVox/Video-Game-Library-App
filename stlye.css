@@ -156,8 +156,8 @@ button[type="submit"]:hover{
 .library {
     display:grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 350px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(350px, 25%);
 
     overflow-y: auto;
 
@@ -195,10 +195,13 @@ button[type="submit"]:hover{
 }
 
 .game-info {
+    width: 90%;
+    max-height: 30%;
     padding: .5rem .5rem;
     box-sizing: border-box;
     background-color: rgba(105, 105, 105, 0.479);
     border-radius: 1rem;
+    overflow-y: auto;
 }
 
 .game-info h2:not(:first-child){
@@ -210,6 +213,26 @@ button[type="submit"]:hover{
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: underline;
+}
+
+  /* Firefox */
+.game-info{
+scrollbar-width:none;
+scrollbar-color: rgba(105, 105, 105, 0.479) #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+.game-info::-webkit-scrollbar {
+width: 4px;
+}
+
+.game-info::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.game-info::-webkit-scrollbar-thumb {
+background-color: transparent;
+border-radius: 25%;
 }
 
 
