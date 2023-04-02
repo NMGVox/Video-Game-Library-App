@@ -63,6 +63,14 @@ function updateDisplay(game) {
     newdiv.appendChild(cover);
     newdiv.appendChild(infoBox);
 
+    if (game.playStatus === 'completed') {
+        newdiv.classList.add('completed');
+    } else if (game.playStatus === 'started') {
+        newdiv.classList.add('started');
+    } else {
+        newdiv.classList.add('not-played');
+    }
+
     newdiv.setAttribute('index', gameCollection.length - 1);
 
     libraryDisplay.appendChild(newdiv);
