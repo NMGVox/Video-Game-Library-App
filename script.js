@@ -20,6 +20,12 @@ function clearFields(title, dev, publisher, releaseDate) {
     releaseDate.value = '';
 }
 
+function changeGameStatus(e) {
+    const parent = e.target.closest('.game-container');
+    parent.classList.remove(parent.classList.item(1));
+    parent.classList.add(e.target.classList[1]);
+}
+
 function updateDisplay(game) {
     const newdiv = document.createElement('div');
     newdiv.className = 'game-container';
@@ -77,7 +83,7 @@ function updateDisplay(game) {
 }
 
 function removeGame(e) {
-    gameCollection.splice(e.target.parentElement.getAttribute('index'), 1);
+    gameCollection[(e.target.parentElement.getAttribute('index'))] = null;
     e.target.parentElement.remove();
 }
 
@@ -114,5 +120,11 @@ submitGame.addEventListener('click', AddVideoGame);
 document.querySelector('body').addEventListener('click', (event) => {
     if (event.target.className === 'remove-button') {
         removeGame(event);
+    }
+});
+
+document.querySelector('body').addEventListener('click', (event) => {
+    if (event.target.classList.contains('change-status')) {
+        changeGameStatus(event);
     }
 });
