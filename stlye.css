@@ -55,14 +55,24 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(95, 166, 216);
+    background-image: linear-gradient(to bottom, rgba(2, 2, 2, 0.603),rgba(51, 51, 51, 0.753)), url('./images/pragii-pX829a6ObhE-unsplash.jpg');
+    background-size:cover;
+    background-position: fixed;
+    background-repeat: no-repeat;
 }
 
 .form-container{
+    padding-left: 1rem;
+    padding-top: 1rem;
     margin-left: 10%;
     min-height: 70%;
     width: 80%;
     flex: 1 0 initial;
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
 }
 
 .form-header {
@@ -102,6 +112,13 @@ input[type="text"]:focus {
 .radio-header {
     font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
+}
+
+.status-container {
+    display:flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 input[type="radio"]{

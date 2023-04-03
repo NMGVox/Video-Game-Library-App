@@ -29,15 +29,17 @@
                         <label for="release-date">Release Date:</label><input id="release-date" name="release-date" type="text">
                     </li>
                     <li><h2 class="radio-header">Completion Status</h2></li>
-                    <li>
-                        <label for="completed">Completed</label><input type="radio" id="completed" name="completion_status"  value="completed">
-                    </li>
-                    <li>
-                        <label for="started">Started</label><input type="radio"  id="started" name="completion_status"  value="started">
-                    </li>
-                    <li>
-                        <label for="unplayed">Not Played</label><input type="radio" id="unplayed" name="completion_status" value="not played" checked>
-                    </li>
+                    <div class="status-container">
+                        <li>
+                            <label for="completed">Completed</label><input type="radio" id="completed" name="completion_status"  value="completed">
+                        </li>
+                        <li>
+                            <label for="started">Started</label><input type="radio"  id="started" name="completion_status"  value="started">
+                        </li>
+                        <li>
+                            <label for="unplayed">Not Played</label><input type="radio" id="unplayed" name="completion_status" value="not played" checked>
+                        </li>
+                    </div>
                     <li>
                         <label for="cover">Cover Art: </label><input type="file" id="cover" name="cover" accept="image/png image/jpeg">
                     </li>
