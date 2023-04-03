@@ -1,12 +1,13 @@
 const gameCollection = [];
 const libraryDisplay = document.querySelector('.library');
 
-function VideoGame(title, developer, publisher, releaseDate, playStatus) {
+function VideoGame(title, developer, publisher, releaseDate, playStatus, cover) {
     this.title = title;
     this.developer = developer;
     this.publisher = publisher;
     this.releaseDate = releaseDate;
     this.playStatus = playStatus;
+    this.cover = cover;
 }
 
 VideoGame.prototype.printInfo = function () {
@@ -18,6 +19,19 @@ function clearFields(title, dev, publisher, releaseDate) {
     dev.value = '';
     publisher.value = '';
     releaseDate.value = '';
+}
+
+function makeCompletionElement() {
+    const newSpan = document.createElement('span');
+    const statusArr = ['not-played', 'started', 'completed'];
+    for (let i = 0; i < 3; i++) {
+        const tempbutton = document.createElement('button');
+        tempbutton.type = 'button';
+        tempbutton.classList.add('change-status');
+        tempbutton.classList.add(statusArr[i]);
+        newSpan.appendChild(tempbutton);
+    }
+    return newSpan;
 }
 
 function changeGameStatus(e) {
@@ -32,7 +46,7 @@ function updateDisplay(game) {
 
     const cover = document.createElement('img');
     cover.className = 'cover';
-    cover.src = './test-img/eOtEAB7.jpg';
+    cover.src = URL.createObjectURL(game.cover);
 
     const infoBox = document.createElement('div');
     infoBox.className = 'game-info';
@@ -65,8 +79,11 @@ function updateDisplay(game) {
         infoBox.appendChild(infoEle[i]);
     }
 
+    const newSpan = makeCompletionElement();
+
     newdiv.appendChild(rmbtn);
     newdiv.appendChild(cover);
+    newdiv.appendChild(newSpan);
     newdiv.appendChild(infoBox);
 
     if (game.playStatus === 'completed') {
@@ -100,9 +117,10 @@ function AddVideoGame(e) {
     const publisher = document.querySelector('#publisher');
     const releaseDate = document.querySelector('#release-date');
     const status = document.querySelector('input[name="completion_status"]:checked');
+    const cover = document.querySelector('#cover');
 
     // eslint-disable-next-line max-len
-    const newGame = new VideoGame(title.value, dev.value, publisher.value, releaseDate.value, status.value);
+    const newGame = new VideoGame(title.value, dev.value, publisher.value, releaseDate.value, status.value, cover.files[0]);
 
     gameCollection.push(newGame);
 
