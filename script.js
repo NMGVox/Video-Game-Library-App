@@ -46,7 +46,11 @@ function updateDisplay(game) {
 
     const cover = document.createElement('img');
     cover.className = 'cover';
-    cover.src = URL.createObjectURL(game.cover);
+    if (game.cover) {
+        cover.src = URL.createObjectURL(game.cover);
+    } else {
+        cover.src = './images/no-cover.png';
+    }
 
     const infoBox = document.createElement('div');
     infoBox.className = 'game-info';
