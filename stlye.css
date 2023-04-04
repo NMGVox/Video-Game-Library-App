@@ -36,11 +36,10 @@ ol, ul {
 
 html {
     font-size: 16px;
-    height: 100vh;
 }
 
 body {
-    height: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: auto 7fr;
     grid-auto-rows: 100%;
@@ -87,6 +86,7 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 #addGameForm li {
@@ -159,6 +159,12 @@ button[type="submit"]:hover{
     cursor: pointer;
 }
 
+.wrapper {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .side-footer {
     width: 100%;
     text-align: center;
@@ -178,22 +184,17 @@ button[type="submit"]:hover{
     box-shadow: 10px 10px 10px 10px black;
 }
 
-#close-sidebar,
-#show-sidebar {
+#close-sidebar {
     position: absolute;
     top: 1rem;
     left: 1rem;
     height: 1.5rem;
 }
 
-#close-sidebar:hover,
-#show-sidebar:hover {
+#close-sidebar:hover{
     cursor:pointer;
 }
 
-#show-sidebar {
-    display: none;
-}
 
 .library {
     position: relative;
@@ -355,4 +356,22 @@ background-color: transparent;
 border-radius: 25%;
 }
 
+@media only screen and (max-width:800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display:none;
+    }
 
+    #close-sidebar {
+        display:none;
+    }
+
+    .library {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 225px));
+        grid-auto-rows: 325px;
+    }
+    
+}

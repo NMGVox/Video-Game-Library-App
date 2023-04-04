@@ -40,11 +40,13 @@
                             <label for="unplayed">Not Played</label><input type="radio" id="unplayed" name="completion_status" value="not played" checked>
                         </li>
                     </div>
-                    <li>
-                        <label for="cover">Cover Art: </label><input type="file" id="cover" name="cover" accept="image/png image/jpeg">
-                    </li>
+                    <div class="wrapper">
+                        <li>
+                            <label for="cover">Cover Art: </label><input type="file" id="cover" name="cover" accept="image/png image/jpeg">
+                        </li>
+                    </div>
                 </ul>
-                <button type="submit" id="gameSubmit">Add Game</button>
+                <div class="wrapper"><button type="submit" id="gameSubmit">Add Game</button></div>
             </form>
         </div>
         <div class="side-footer">
@@ -54,7 +56,6 @@
     <div class="main">
         <div class="searchbar">
             <img id="close-sidebar" src="./images/svg/arrow-collapse-left.svg" alt="collapse sidebar">
-            <img id="show-sidebar" src="./images/svg/arrow-collapse-right.svg" alt="show sidebar">
         </div>
         <div class="library">
             <div class="legend">
