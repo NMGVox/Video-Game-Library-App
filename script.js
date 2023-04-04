@@ -135,6 +135,17 @@ function AddVideoGame(e) {
     return false;
 }
 
+function closeSidebar(e) {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar.classList.contains('collapse')) {
+        sidebar.classList.remove('collapse');
+        e.target.src = './images/svg/arrow-collapse-left.svg';
+        return;
+    }
+    document.querySelector('.sidebar').classList.add('collapse');
+    e.target.src = './images/svg/arrow-collapse-right.svg';
+}
+
 const submitGame = document.querySelector('#gameSubmit');
 
 submitGame.addEventListener('click', AddVideoGame);
@@ -150,3 +161,5 @@ document.querySelector('body').addEventListener('click', (event) => {
         changeGameStatus(event);
     }
 });
+
+document.querySelector('#close-sidebar').addEventListener('pointerdown', closeSidebar);
