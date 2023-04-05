@@ -24,11 +24,13 @@ function clearFields(title, dev, publisher, releaseDate) {
 function makeCompletionElement() {
     const newSpan = document.createElement('span');
     const statusArr = ['not-played', 'started', 'completed'];
+    const str = 'NSC';
     for (let i = 0; i < 3; i++) {
         const tempbutton = document.createElement('button');
         tempbutton.type = 'button';
         tempbutton.classList.add('change-status');
         tempbutton.classList.add(statusArr[i]);
+        tempbutton.innerText = str[i];
         newSpan.appendChild(tempbutton);
     }
     return newSpan;
@@ -135,6 +137,21 @@ function AddVideoGame(e) {
     return false;
 }
 
+function openFormMobile(e) {
+    const dimmer = document.createElement('div');
+    dimmer.className = 'dimmer';
+    dimmer.append(document.getElementById('form-container'));
+    document.querySelector('body').appendChild(dimmer);
+}
+
+function closeFormMobile(e) {
+    const dimmer = document.querySelector('.dimmer');
+    const sidebar = document.querySelector('.sidebar');
+    const footer = document.querySelector('.side-footer');
+    sidebar.insertBefore(dimmer.firstChild, footer);
+    document.querySelector('body').removeChild(dimmer);
+}
+
 function closeSidebar(e) {
     const sidebar = document.querySelector('.sidebar');
     if (sidebar.classList.contains('collapse')) {
@@ -162,4 +179,19 @@ document.querySelector('body').addEventListener('click', (event) => {
     }
 });
 
+/* Screen dependent function */
+document.querySelector('body').addEventListener('pointerdown', (event) => {
+    if (event.target.classList.contains('dimmer')) {
+        closeFormMobile(event);
+    }
+});
+
 document.querySelector('#close-sidebar').addEventListener('pointerdown', closeSidebar);
+
+// document.querySelector('body').addEventListener('pointerdown', (event) => {
+//     if (event.target.classList.contains('cover')) {
+//         showGameInfo(event);
+//     }
+// });
+
+document.querySelector('.form-trigger-mobile').addEventListener('pointerdown', openFormMobile);

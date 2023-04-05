@@ -10,9 +10,9 @@
 <body>
     <div class="sidebar">
         <div class="logo-container">
-            <h1 class="logo">Hello!</h1>
+            <img src="./images/Controller Logo.png" alt="Site Logo" class="logo">
         </div>
-        <div class="form-container">
+        <div id="form-container" class="form-container">
             <h1 class="form-header">Game Information</h1>
             <form id="addGameForm">
                 <ul>
@@ -56,13 +56,14 @@
     <div class="main">
         <div class="searchbar">
             <img id="close-sidebar" src="./images/svg/arrow-collapse-left.svg" alt="collapse sidebar">
+            <button type="button" class="form-trigger-mobile">Add Game</button>
         </div>
         <div class="library">
             <div class="legend">
                 <ul>
-                    <li><div class="leg-square not-played"></div><p>Not Played</p></li>
-                    <li><div class="leg-square started"></div><p>Started</p></li>
-                    <li><div class="leg-square completed"></div><p>Completed</p></li>
+                    <li><div class="leg-square not-played">N</div>Not Played</p></li>
+                    <li><div class="leg-square started">S</div>Started</p></li>
+                    <li><div class="leg-square completed">C</div>Completed</p></li>
                 </ul>
             </div>
             <div class="game-container started">
