@@ -189,6 +189,19 @@ button[type="submit"]:hover,
     font-weight: 600;
 }
 
+.github-link{
+    color: black;
+}
+
+.github-link:visited{
+    color: black;
+}
+
+.github-logo {
+    height: 1rem;
+    width:auto;
+}
+
 .main {
     min-height: 100%;
     display:grid;
