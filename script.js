@@ -16,13 +16,6 @@ class VideoGame {
     }
 }
 
-function clearFields(title, dev, publisher, releaseDate) {
-    title.reset();
-    dev.reset();
-    publisher.reset();
-    releaseDate.reset();
-}
-
 function makeCompletionElement() {
     const newSpan = document.createElement('span');
     const statusArr = ['not-played', 'started', 'completed'];
@@ -132,7 +125,7 @@ function AddVideoGame(e) {
 
     gameCollection.push(newGame);
 
-    clearFields(title, dev, publisher, releaseDate);
+    form.reset();
 
     updateDisplay(newGame);
 
