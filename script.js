@@ -1,24 +1,26 @@
 const gameCollection = [];
 const libraryDisplay = document.querySelector('.library');
 
-function VideoGame(title, developer, publisher, releaseDate, playStatus, cover) {
-    this.title = title;
-    this.developer = developer;
-    this.publisher = publisher;
-    this.releaseDate = releaseDate;
-    this.playStatus = playStatus;
-    this.cover = cover;
+class VideoGame {
+    constructor(title, developer, publisher, releaseDate, playStatus, cover) {
+        this.title = title;
+        this.developer = developer;
+        this.publisher = publisher;
+        this.releaseDate = releaseDate;
+        this.playStatus = playStatus;
+        this.cover = cover;
+    }
+
+    get info() {
+        return (`${this.title} was developed by ${this.developer} and published by ${this.publisher}. You have ${this.playStatus} this game.`);
+    }
 }
 
-VideoGame.prototype.printInfo = function () {
-    return (`${this.title} was developed by ${this.developer} and published by ${this.publisher}. You have ${this.playStatus} this game.`);
-};
-
 function clearFields(title, dev, publisher, releaseDate) {
-    title.value = '';
-    dev.value = '';
-    publisher.value = '';
-    releaseDate.value = '';
+    title.reset();
+    dev.reset();
+    publisher.reset();
+    releaseDate.reset();
 }
 
 function makeCompletionElement() {
